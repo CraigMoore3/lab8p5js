@@ -23,13 +23,14 @@ function setup() {
 
 function draw() {
   // joystick demo - replace this with your code
-  background("lightBlue");
   let x = map(incomingSerialData[0],0,1023,0,width);
   let y = map(incomingSerialData[1],0,1023,0,width);
+  background(22, y/3, 40, 5);
   if (incomingSerialData[2]) {
-    fill("darkBlue");
+    fill("white");
   } else {
-    fill("red");
+    fill("black");
   }
-  ellipse(x,y,60,60);
+  rotate(frameCount);
+  text("Lab 8 Complete", x, y)
 }
